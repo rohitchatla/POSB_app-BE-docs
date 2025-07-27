@@ -7,6 +7,7 @@
 
 ## Description
 
+Triggers the download of "opened" and "closed" reports for the previous working day. The download is processed asynchronously in the background.
 Checks "opened" and "closed" reports for the previous working day. If success response then the reports are present else they are not.
 
 ---
@@ -77,6 +78,7 @@ curl -X POST https://posb-app-be.onrender.com/run-download \
 
 ## Notes
 
+- The download is started in a background thread; the API responds immediately.
 - Checks the files presence and the API responds immediately.
 - The `type` parameter is reserved for future use; currently, both "opened" and "closed" reports are always downloaded.
 - The `download_dir` parameter is optional. If not provided, the server's current working directory is used.
